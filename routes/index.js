@@ -54,7 +54,7 @@ r.get('/:short', async (req, res) => {
     res.status(308)
     res.redirect(data[0].original_link)
   } else {
-    res.status(404).send('Not Found')
+    res.status(404).send('Shortlink did not created, please create on https://kurz.evl.pink')
   }
 });
 

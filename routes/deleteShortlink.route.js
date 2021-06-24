@@ -27,7 +27,10 @@ r.post("/", async (req, res) => {
       .from("kurz_db")
       .delete()
       .eq("delete_key", req.body.delete_key);
-    res.status(202).send(`Shortlink ${data[0].short_link} deleted.`);
+    res.status(202).send({
+      status: 202,
+      message: `Shortlink https://s.evl.pink/${data[0].short_link} has been deleted.`,
+    });
   } else {
     res.status(404).send({
       error: true,
