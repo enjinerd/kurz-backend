@@ -6,13 +6,17 @@ class BaseResponseObject {
   }
 }
 
-exports.SuccessResponseObject = class SuccessResponseObject extends BaseResponseObject {
+exports.SuccessResponseObject = class SuccessResponseObject extends (
+  BaseResponseObject
+) {
   constructor(message, data) {
     super(true, message, data);
   }
 };
 
-exports.ErrorResponseObject = class ErrorResponseObject extends BaseResponseObject {
+exports.ErrorResponseObject = class ErrorResponseObject extends (
+  BaseResponseObject
+) {
   constructor(message, data) {
     super(false, message, data);
   }
