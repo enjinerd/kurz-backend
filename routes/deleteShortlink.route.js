@@ -11,9 +11,9 @@ const supabaseKey = process.env.SUPABASE_KEY;
 
 const r = Router();
 
-r.get('/', (req, res) => {
-  res.status(403).send('FORBIDDEN')
-})
+r.get("/", (req, res) => {
+  res.status(403).send("FORBIDDEN");
+});
 
 r.post("/", async (req, res) => {
   const supabase = await createClient(supabaseUrl, supabaseKey);
@@ -29,7 +29,7 @@ r.post("/", async (req, res) => {
       .eq("delete_key", req.body.delete_key);
     res.status(202).send({
       status: 202,
-      message: `Shortlink https://s.evl.pink/${data[0].short_link} has been deleted.`,
+      message: `Shortlink https://krz.vercel.app/${data[0].short_link} has been deleted.`,
     });
   } else {
     res.status(404).send({
